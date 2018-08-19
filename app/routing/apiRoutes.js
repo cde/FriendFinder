@@ -4,7 +4,6 @@ const getRandomIndex = (max) =>{
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-
 let friendsList = require("../data/friends");
 
 function apiRoutes(app){
@@ -16,12 +15,14 @@ function apiRoutes(app){
     app.post("/api/friends", function(req, res) {
         let userData = req.body;
         let userDataScores = userData.scores;
+        console.log(userData);
 
         let friendsDiff = friendsList.map(function(friend){
+            console.log(friend)
             // Compare the difference between current user's scores against those from other users, question by question
             let diffScores = []
             for(let i=0; i < friend["scores"].length; i++){
-                diffScores.push(Math.abs(friend["scores"][i] - userDataScores[i]));
+                diffScores.push(Math.abs(friend["scores"][i] - parseInt(userDataScores[i])));
             }
             // console.log(`${friend["name"]} diff scores`, diffScores)
 
@@ -31,6 +32,7 @@ function apiRoutes(app){
 
         })
 
+        console.log(friendsDiff)
         // Find the closest match (Min diff) by:
         // 1) Sorting
         // friendsDiff.sort(function (a, b) {
@@ -44,6 +46,8 @@ function apiRoutes(app){
         const bestMatches = friendsDiff.filter(friend => {
             return friend["diff"] === diff
         });
+
+        console.log("bestMatches ", bestMatches)
         // If we get more than one matches, return one randomly
         let bestMatch = {}
         if(bestMatches.length > 1) {
@@ -55,6 +59,11 @@ function apiRoutes(app){
         if(bestMatches.length == 1){
             bestMatch = bestMatches[0]
         }
+
+        if(bestMatches.length == 0){
+            console.log("We couldn't find a match. Sorry!")
+        }
+        friendsList.push(userData);
         res.json(bestMatch);
     });
 }

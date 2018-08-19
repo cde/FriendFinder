@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Carmen Diaz">
+
+    <title>Friend Finder </title>
+
+    <!--Styles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        ol{
+            padding: 30px;
+        }
+
+    </style>
+
+
+</head>
+<body class="has-background-light">
+
+    <section class="hero is-small is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="title is-1">
+                        Friend Finder
+                    </h1>
+                    <h2 class="subtitle">
+                        Survey
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container is-centered">
+            <div class="column is-half">
+                <h2 class="is-size-3">About you </h2>
+
+                <div class="field">
+                    <label class="label">Your Name</label>
+                    <div class="control">
+                        <input id="name" class="input" type="text" placeholder="Text input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Link to Photo Image</label>
+                    <div class="control">
+                        <input id="linkPhoto" class="input" type="text" placeholder="Text input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="column questions">
+                <h3 class="is-size-4">Please awnser these questions</h3>
+                <h4>1 (Strongly Disagree) & 5 (Strongly Agree)</h4>
+                <div class="container">
+                    <ol>
+                        <li class="field">
+                            Your mind is always buzzing with unexplored ideas and plans.
+                            <div class="control" id="q1">
+                                <label class="radio">
+                                    <input type="radio" name="q1-rsvp" value="1"> 1
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q1-rsvp" value="2">
+                                    2
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q1-rsvp" value="3">
+                                    3
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q1-rsvp"value="4" >
+                                    4
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q1-rsvp" value="5">
+                                    5
+                                </label>
+                            </div>
+                        </li>
+                        <li class="field">
+                            Generally speaking, you rely more on your experience than your imagination.
+                            <div class="control" id="q2">
+                                <label class="radio">
+                                    <input type="radio" name="q2-rsvp" value="1"> 1
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q2-rsvp" value="2">
+                                    2
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q2-rsvp" value="3">
+                                    3
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q2-rsvp"value="4" >
+                                    4
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q2-rsvp" value="5">
+                                    5
+                                </label>
+                            </div>
+                        </li>
+                        <li class="field">
+                            You find it easy to stay relaxed and focused even when there is some pressure.
+                            <div class="control" id="q3">
+                                <label class="radio">
+                                    <input type="radio" name="q3-rsvp" value="1"> 1
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q3-rsvp" value="2">
+                                    2
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q3-rsvp" value="3">
+                                    3
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q3-rsvp"value="4" >
+                                    4
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q3-rsvp" value="5">
+                                    5
+                                </label>
+                            </div>
+                        </li>
+                        <li class="field">
+                            You rarely do something just out of sheer curiosity.
+                            <div class="control" id="q4">
+                                <label class="radio">
+                                    <input type="radio" name="q4-rsvp" value="1"> 1
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q4-rsvp" value="2">
+                                    2
+                                </label>
+                                <label class="radio" >
+                                    <input type="radio" name="q4-rsvp" value="3">
+                                    3
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q4-rsvp"value="4" >
+                                    4
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q4-rsvp" value="5">
+                                    5
+                                </label>
+                            </div>
+                        </li>
+                        <li class="field">
+                            People can rarely upset you.
+                            <div class="control" id="q5">
+                                <label class="radio">
+                                    <input type="radio" name="q5-rsvp" value="1"> 1
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q5-rsvp" value="2">
+                                    2
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q5-rsvp" value="3">
+                                    3
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q5-rsvp"value="4" >
+                                    4
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q5-rsvp" value="5">
+                                    5
+                                </label>
+                            </div>
+                        </li>
+                        <li class="field">
+                            It is often difficult for you to relate to other people’s feelings.
+                            <div class="control" id="q6">
+                                <label class="radio">
+                                    <input type="radio" name="q6-rsvp" value="1"> 1
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q6-rsvp" value="2">
+                                    2
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q6-rsvp" value="3">
+                                    3
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q6-rsvp"value="4" >
+                                    4
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q6-rsvp" value="5">
+                                    5
+                                </label>
+
+                            </div>
+                        </li>
+                        <li class="field">
+                            In a discussion, truth should be more important than people’s sensitivities.
+                            <div class="control" id="q7">
+                                <label class="radio">
+                                    <input type="radio" name="q7-rsvp" value="1"> 1
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q7-rsvp" value="2">
+                                    2
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q7-rsvp" value="3">
+                                    3
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q7-rsvp"value="4" >
+                                    4
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q7-rsvp" value="5">
+                                    5
+                                </label>
+
+                            </div>
+                        </li>
+                        <li class="field">
+                            You rarely get carried away by fantasies and ideas.
+
+                            <div class="control" id="q8">
+                                <label class="radio">
+                                    <input type="radio" name="q8-rsvp" value="1"> 1
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q8-rsvp" value="2">
+                                    2
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q8-rsvp" value="3">
+                                    3
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q8-rsvp"value="4" >
+                                    4
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q8-rsvp" value="5">
+                                    5
+                                </label>
+
+                            </div>
+                        </li>
+                        <li class="field">
+                            You think that everyone’s views should be respected regardless of whether they are supported by facts or not.
+                            <div class="control" id="q9">
+                                <label class="radio">
+                                    <input type="radio" name="q9-rsvp" value="1"> 1
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q9-rsvp" value="2">
+                                    2
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q9-rsvp" value="3">
+                                    3
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q9-rsvp"value="4" >
+                                    4
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="q9-rsvp" value="5">
+                                    5
+                                </label>
+
+                            </div>
+                        </li>
+                        <li class="field">
+                            You feel more energetic after spending time with a group of people.
+                            <div class="control" id="q10">
+                                <label class="radio">
+                                    <input type="radio" name="q10-rsvp" value="1"> 1
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q10-rsvp" value="2">
+                                    2
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q10-rsvp" value="3">
+                                    3
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q10-rsvp"value="4" >
+                                    4
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="q10-rsvp" value="5">
+                                    5
+                                </label>
+
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <button id="submit" class="button is-primary">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="show-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <article class="media">
+                    <div class="media-left">
+                        <figure class="image is-128x128">
+                            <img id="match-img" src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <h1>Your Match is:</h1>
+                            <p id="match-name"></p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <script type="text/javascript">
+
+        // Capture the form inputs
+        $("#submit").on("click", function(event) {
+            event.preventDefault();
+
+            // Form validation
+            function validateForm() {
+                var isValid = true;
+                $(".control > input").each(function() {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                for(let i=1; i < 11; i++){
+                    let checked = $("#q" + i +  " input[type=radio]").is(':checked')
+                    console.log(checked);
+                    if(!checked){
+                        isValid = false;
+                    }
+                }
+                return isValid;
+            }
+
+            // If all required fields are filled
+            if (validateForm()) {
+
+                let scores = []
+                for(let i=1; i < 11; i++){
+                    let elem = $("#q" + i +  " input[type=radio]:checked")
+                    scores.push(elem.val())
+                }
+
+                // Create an object for the user"s data
+                var userData = {
+                    name: $("#name").val(),
+                    photo: $("#linkPhoto").val(),
+                    scores: scores
+                };
+
+                // AJAX post the data to the friends API.
+                $.post("/api/friends", userData, function(data) {
+
+                    // If a table is available... tell user they are booked.
+                    if (data) {
+                        console.log("Yay! We find your match!");
+                        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                        $("#match-name").text(data.name);
+                        $("#match-img").attr("src", data.photo);
+                        $("#show-modal").addClass('is-active');
+
+                    }
+                    else {
+                        console.log("Sorry we couldn't find your match");
+                    }
+                });
+
+                $(".modal-close").click(function() {
+                    $("#show-modal").removeClass("is-active");
+                    // Clear the form when submitting
+                    $("#name").val("");
+                    $("#linkPhoto").val("");
+                    for(let i=1; i < 11; i++){
+                        $("#q" + i +  " input[type=radio]:checked").removeAttr("checked")
+                    }
+
+                });
+            } else {
+                alert("Please fill out all fields & checks the questions before submitting!");
+            }
+        });
+    </script>
+</body>
+</html>
